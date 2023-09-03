@@ -4,21 +4,31 @@ import java.io.BufferedReader;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class WordCRUD implements ICRUD{
+public class WordCRUD implements ICRUD {
 
     // 변수 선언
     ArrayList<Word> list;
     Scanner sc;
 
     // 생성자
-    WordCRUD(Scanner sc ) {
+    WordCRUD(Scanner sc) {
         list = new ArrayList<>();
         this.sc = sc;
     }
 
     @Override
     public Object add() {
+        // 난이도, 새 단어 입력 받기
+        System.out.print("=> 난이도 (1, 2, 3) & 새 단어 입력 : ");
+        int level = sc.nextInt();
+        String word = sc.nextLine();
 
+        // 뜻 입력 받기
+        System.out.print("뜻 입력 : ");
+        String meaning = sc.nextLine();
+        System.out.println();
+
+        return new Word(0, level, word, meaning);
     }
 
     // 입력 받은 데이터를 리스트에 추가하는 메소드

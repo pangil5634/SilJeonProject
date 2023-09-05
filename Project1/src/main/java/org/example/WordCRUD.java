@@ -1,6 +1,5 @@
 package org.example;
 
-import java.io.BufferedReader;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -40,32 +39,156 @@ public class WordCRUD implements ICRUD {
     }
 
     @Override
-    public int update(Object obj) {
+    public int update() {
+
+        if (list.isEmpty()) {
+            System.out.println("------------------------------");
+            System.out.println("데이터가 없습니다.");
+            System.out.println("------------------------------");
+            System.out.println();
+        } else {
+            System.out.print("=> 수정할 단어 검색 : ");
+            String keyword = sc.next();
+
+            ArrayList<Integer> idlist = this.listAll(keyword);
+
+            System.out.print("=> 수정할 번호 선택 : ");
+            int id = sc.nextInt();
+            sc.nextLine();
+
+            System.out.print("=> 뜻 입력 : ");
+            String meaning = sc.nextLine();
+
+            Word word = list.get(idlist.get(id - 1));
+
+            word.setMeaning(meaning);
+            System.out.println("단어가 수정되었습니다.");
+        }
         return 0;
     }
 
     @Override
-    public int delete(Object obj) {
+    public int delete() {
+        if (list.isEmpty()) {
+            System.out.println("------------------------------");
+            System.out.println("데이터가 없습니다.");
+            System.out.println("------------------------------");
+            System.out.println();
+        } else {
+            System.out.print("=> 삭제할 단어 검색 : ");
+            String keyword = sc.next();
+            System.out.println();
+
+            ArrayList<Integer> idlist = this.listAll(keyword);
+            if (idlist.isEmpty())
+                return 0;
+            System.out.print("=> 삭제할 번호 선택 : ");
+            int id = sc.nextInt();
+            sc.nextLine();
+
+            System.out.print("=> 정말로 삭제하실래요? (Y/N) : ");
+            String answer = sc.next();
+            System.out.println();
+
+            if (answer.equalsIgnoreCase("Y")) {
+                list.remove((int) idlist.get(id - 1));
+                System.out.println("단어가 삭제되었습니다.");
+                System.out.println();
+            } else {
+                System.out.println("취소되었습니다.");
+                System.out.println();
+            }
+
+        }
         return 0;
     }
 
+
     @Override
-    public void selectOne(int id) {
-
-    }
-
     public void listAll() {
+        if (list.isEmpty()) {
+            System.out.println("------------------------------");
+            System.out.println("데이터가 없습니다.");
+            System.out.println("------------------------------");
+            System.out.println();
+        } else {
+            System.out.println("------------------------------");
+            for (int i = 0; i < list.size(); i++) {
+                System.out.printf("%-2d ", i + 1);
+                System.out.println(list.get(i).toString());
+            }
+            System.out.println("------------------------------");
+            System.out.println();
+        }
+    }
+
+    public void listAll(int level) {
         System.out.println("--------------------------------");
-        for(int i = 0; i < list.size(); i++) {
-            System.out.printf("%-2d ", i+1);
+        for (int i = 0; i < list.size(); i++) {
+            System.out.printf("%-2d ", i + 1);
             System.out.println(list.get(i).toString());
         }
         System.out.println("--------------------------------");
         System.out.println();
+    }
 
+    public ArrayList<Integer> listAll(String keyword) {
 
+        ArrayList<Integer> idlist = new ArrayList<>();
+
+        int count = 0;
+
+        System.out.println("------------------------------");
+        for (int i = 0; i < list.size(); i++) {
+            String word = list.get(i).getWord(); // 영어 단어 가져오기
+
+            if (word.contains(keyword)) {
+                System.out.print(count + 1 + " ");
+                System.out.println(list.get(i).toString());
+                idlist.add(i);
+                count++;
+            } else {
+                continue;
+            }
+        }
+        if (idlist.isEmpty()) {
+            System.out.println("데이터가 없습니다.");
+            System.out.println("------------------------------");
+            System.out.println();
+        } else {
+            System.out.println("------------------------------");
+            System.out.println();
+
+        }
+        return idlist;
+    }
+
+    public void searchLevel() {
+        // TODO Auto-generated method stub
+        if (list.isEmpty()) {
+            System.out.println("------------------------------");
+            System.out.println("데이터가 없습니다.");
+            System.out.println("------------------------------");
+            System.out.println();
+        } else {
+            System.out.print("=> 원하는 레벨은? (1~3) ");
+            int level = sc.nextInt();
+            listAll(level);
+        }
 
     }
 
-
+    public void searchWord() {
+        // TODO Auto-generated method stub
+        if (list.isEmpty()) {
+            System.out.println("------------------------------");
+            System.out.println("데이터가 없습니다.");
+            System.out.println("------------------------------");
+            System.out.println();
+        } else {
+            System.out.print("=> 원하는 단어는? ");
+            String keyword = sc.next();
+            listAll(keyword);
+        }
+    }
 }

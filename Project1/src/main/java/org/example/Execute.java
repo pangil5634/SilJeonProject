@@ -1,8 +1,5 @@
 package org.example;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.Scanner;
 
 public class Execute {
@@ -34,11 +31,15 @@ public class Execute {
             } else if (menu == 1) {
                 wordCRUD.listAll();
             } else if (menu == 2) {
+                wordCRUD.searchLevel();
             } else if (menu == 3) {
+                wordCRUD.searchWord();
             } else if (menu == 4) {
                 wordCRUD.addItem();
             } else if (menu == 5) {
+                wordCRUD.update();
             } else if (menu == 6) {
+                wordCRUD.delete();
             } else if (menu == 7) {
             }
         }
@@ -69,4 +70,6 @@ public class Execute {
 
         return menu;
     }
+
+
 }

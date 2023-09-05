@@ -5,10 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f2360547-649c-4598-8028-5700fef61f2f" name="Changes" comment="test">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project1/src/main/java/org/example/Execute.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project1/src/main/java/org/example/Execute.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project1/src/main/java/org/example/ICRUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project1/src/main/java/org/example/ICRUD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project1/src/main/java/org/example/WordCRUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project1/src/main/java/org/example/WordCRUD.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project1/target/classes/org/example/Execute.class" beforeDir="false" afterPath="$PROJECT_DIR$/Project1/target/classes/org/example/Execute.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project1/target/classes/org/example/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/Project1/target/classes/org/example/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project1/target/classes/org/example/ICRUD.class" beforeDir="false" afterPath="$PROJECT_DIR$/Project1/target/classes/org/example/ICRUD.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project1/target/classes/org/example/WordCRUD.class" beforeDir="false" afterPath="$PROJECT_DIR$/Project1/target/classes/org/example/WordCRUD.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,14 +44,13 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.importing&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
-      <module name="KwangilKimProejct" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="org.example.*" />
@@ -74,7 +76,11 @@
       <option name="presentableId" value="Default" />
       <updated>1693532949516</updated>
       <workItem from="1693532950579" duration="904000" />
-      <workItem from="1693718678148" duration="127000" />
+      <workItem from="1693718678148" duration="341000" />
+      <workItem from="1693875962204" duration="15000" />
+      <workItem from="1693877956764" duration="68000" />
+      <workItem from="1693878068486" duration="85000" />
+      <workItem from="1693878202456" duration="75000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <option name="closed" value="true" />

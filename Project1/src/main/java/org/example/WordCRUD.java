@@ -46,15 +46,36 @@ public class WordCRUD implements ICRUD {
             System.out.println("데이터가 없습니다.");
             System.out.println("------------------------------");
             System.out.println();
+            return -1;
         } else {
             System.out.print("=> 수정할 단어 검색 : ");
             String keyword = sc.next();
+            System.out.println();
 
             ArrayList<Integer> idlist = this.listAll(keyword);
+
+            if(idlist.isEmpty()){
+                System.out.println("------------------------------");
+                System.out.println("데이터가 없습니다.");
+                System.out.println("------------------------------");
+                System.out.println();
+                return -1;
+            }
+
+
 
             System.out.print("=> 수정할 번호 선택 : ");
             int id = sc.nextInt();
             sc.nextLine();
+
+            if(idlist.size() < id || 0 > id){
+                System.out.println();
+                System.out.println("------------------------------");
+                System.out.println("데이터가 없습니다.");
+                System.out.println("------------------------------");
+                System.out.println();
+                return -1;
+            }
 
             System.out.print("=> 뜻 입력 : ");
             String meaning = sc.nextLine();
@@ -62,7 +83,11 @@ public class WordCRUD implements ICRUD {
             Word word = list.get(idlist.get(id - 1));
 
             word.setMeaning(meaning);
+            System.out.println();
+            System.out.println("------------------------------");
             System.out.println("단어가 수정되었습니다.");
+            System.out.println("------------------------------");
+            System.out.println();
         }
         return 0;
     }

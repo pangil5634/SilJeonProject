@@ -1,5 +1,6 @@
 package org.example;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Execute {
@@ -14,9 +15,10 @@ public class Execute {
     }
 
     // 메인 run method
-    public void run() {
+    public void run() throws IOException {
         System.out.println("*** 영단어 마스터 ***"); // 처음에만 출력
         System.out.println();
+        wordCRUD.loadFile();
 
         // 프로그램 반복
         while (true) {
@@ -41,6 +43,7 @@ public class Execute {
             } else if (menu == 6) {
                 wordCRUD.delete();
             } else if (menu == 7) {
+                wordCRUD.saveFile();
             }
         }
     }

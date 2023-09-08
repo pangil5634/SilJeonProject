@@ -1,5 +1,6 @@
 package org.example;
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -8,7 +9,7 @@ public class WordCRUD implements ICRUD {
     // 변수 선언
     ArrayList<Word> list;
     Scanner sc;
-
+    final String fname = "Dictonary.txt";
     // 생성자
     WordCRUD(Scanner sc) {
         list = new ArrayList<>();
@@ -215,5 +216,51 @@ public class WordCRUD implements ICRUD {
             String keyword = sc.next();
             listAll(keyword);
         }
+    }
+
+    public void loadFile() throws IOException, FileNotFoundException {
+
+        BufferedReader br = new BufferedReader(new FileReader(fname));
+
+        String line = null;
+
+        int count = 0;
+
+        while(true) {
+            line = br.readLine();
+
+            if(line == null)
+                break;
+
+            String data[] = line.split("\\|");
+
+            int level = Integer.parseInt(data[0]);
+            String word = data[1];
+            String meaning = data[2];
+            list.add(new Word(0, level, word, meaning));
+            count++;
+
+        }
+
+        br.close();
+        System.out.println("===> "  + count + "개 로딩완료!");
+        System.out.println();
+
+    }
+
+    public void saveFile() throws IOException {
+        // TODO Auto-generated method stub
+
+//		PrintWriter pr = new PrintWriter(new FileWriter("test.txt"));
+        PrintWriter pr = new PrintWriter(new FileWriter(fname));
+
+        for(Word one : list) {
+            pr.write(one.toFileString() + "\n");
+            // write는 마지막에 개행문자가 없으므로 넣어주어야 한다.
+        }
+
+        pr.close();
+        System.out.println("===> 데이터 저장 완료!");
+
     }
 }

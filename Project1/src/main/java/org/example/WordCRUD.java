@@ -36,35 +36,36 @@ public class WordCRUD implements ICRUD {
     // 입력 받은 데이터를 리스트에 추가하는 메소드
     public void addItem() {
         Word one = (Word) add(); // casting
-        list.add(one);
+        list.add(one); // 리스트에 저장
+
         System.out.println("새 단어가 단어장에 추가되었습니다 !!!");
         System.out.println();
     }
 
+    // 데이터를 수정하는 메소드
     @Override
     public int update() {
 
-        if (list.isEmpty()) {
+        if (list.isEmpty()) { // 참조할 데이터가 없는 경우
             System.out.println("------------------------------");
             System.out.println("데이터가 없습니다.");
             System.out.println("------------------------------");
             System.out.println();
             return -1;
         } else {
-            System.out.print("=> 수정할 단어 검색 : ");
-            String keyword = sc.next();
-            ArrayList<Integer> idlist = this.listAll(keyword);
+            System.out.print("=> 수정할 단어 검색 : "); // 입력을 위한 출력 구문
+            String keyword = sc.next(); // 수정할 단어를 입력
+            ArrayList<Integer> idlist = this.listAll(keyword); // 수정할 단어가 포함되어 있는 단어들을 모아둔 리스트
 
             if (idlist.isEmpty()) {
                 return 0;
             }
 
-
-            System.out.print("=> 수정할 번호 선택 : ");
-            int id = sc.nextInt();
+            System.out.print("=> 수정할 번호 선택 : "); // 입력을 위한 출력 구문
+            int id = sc.nextInt(); // 수정할 번호를 입력
             sc.nextLine();
 
-            if (idlist.size() < id || 0 > id) {
+            if (idlist.size() < id || 0 > id) { // 제공된 번호를 넘어간 경우
                 System.out.println();
                 System.out.println("------------------------------");
                 System.out.println("데이터가 없습니다.");
@@ -73,18 +74,19 @@ public class WordCRUD implements ICRUD {
                 return -1;
             }
 
-            System.out.print("=> 뜻 입력 : ");
-            String meaning = sc.nextLine();
+            System.out.print("=> 뜻 입력 : "); // 입력을 위한 출력 구문
+            String meaning = sc.nextLine(); // 뜻 입력
 
-            Word word = list.get(idlist.get(id - 1));
+            Word word = list.get(idlist.get(id - 1)); // 해당 번호의 데이터를 새로운 Word에 복사하기
 
-            word.setMeaning(meaning);
+            word.setMeaning(meaning); // 새로 입력된 뜻으로 변경ㅣ
             System.out.println();
             System.out.println("단어 수정이 성공적으로 되었습니다!!");
             System.out.println();
         }
         return 0;
     }
+
 
     @Override
     public int delete() {

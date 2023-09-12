@@ -16,12 +16,15 @@ public class Execute {
 
     // 메인 run method
     public void run() throws IOException {
-        wordCRUD.loadFile();
+//        wordCRUD.loadFile();
+        wordCRUD.LoadData("");
+        System.out.printf("=> %d개 단어 로딩 완료!!\n\n", wordCRUD.getSize());
         System.out.println("*** 영단어 마스터 ***"); // 처음에만 출력
         System.out.println();
 
         // 프로그램 반복
         while (true) {
+            wordCRUD.LoadData("");
             // 메뉴 입력 받기
             printMenu(); // 메뉴 내용 출력
             int menu = getMenu(); // 사용자로부터 메뉴 번호 입력 받기
@@ -39,7 +42,7 @@ public class Execute {
             } else if (menu == 4) {
                 wordCRUD.addItem();
             } else if (menu == 5) {
-                wordCRUD.update();
+                wordCRUD.updateItem();
             } else if (menu == 6) {
                 wordCRUD.delete();
             } else if (menu == 7) {

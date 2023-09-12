@@ -11,6 +11,15 @@ public class WordCRUD implements ICRUD {
     Scanner sc; // 입력을 위한 Scanner 선언
     final String fname = "Dictonary.txt"; // 파일을 읽고 저장할 파일명을 저장하는 변수
 
+    // SQL 구문 사용
+    // SQL 구문을 담는 문자열 변수
+    final String WORD_SELECTAll = "select * from dataList";
+    final String WORD_SELECT = "select * from dataList where word like ? ";
+    final String WORD_INSERT = "insert into dataList (level, word, meaning) "
+            + "values (?, ?, ?) ";
+    final String WORD_UPDATE = "update dataList set meaning=? where id=? ";
+    final String WORD_DELETE = "delete from dataList where id = ?";
+
     // 생성자
     WordCRUD(Scanner sc) {
         list = new ArrayList<>(); // class 생성 시 새로운 arrayList를 할당시킨다.
@@ -87,36 +96,38 @@ public class WordCRUD implements ICRUD {
         return 0;
     }
 
-
+    // 데이터를 삭제하는 메소드
     @Override
     public int delete() {
-        if (list.isEmpty()) {
+        if (list.isEmpty()) { // 참조할 데이터가 없는 경우
             System.out.println("------------------------------");
             System.out.println("데이터가 없습니다.");
             System.out.println("------------------------------");
             System.out.println();
         } else {
-            System.out.print("=> 삭제할 단어 검색 : ");
-            String keyword = sc.next();
+            System.out.print("=> 삭제할 단어 검색 : "); // 입력을 위한 출력 구문
+            String keyword = sc.next(); // 삭제할 단어 입력
             System.out.println();
 
-            ArrayList<Integer> idlist = this.listAll(keyword);
-            if (idlist.isEmpty())
+            ArrayList<Integer> idlist = this.listAll(keyword); // 해당 단어가 있는 리스트를 생성
+
+            if (idlist.isEmpty()) // 리스트가 없는 경우
                 return 0;
-            System.out.print("=> 삭제할 번호 선택 : ");
-            int id = sc.nextInt();
+
+            System.out.print("=> 삭제할 번호 선택 : "); // 입력을 위한 출력 구문
+            int id = sc.nextInt(); // 삭제할 번호 입력
             sc.nextLine();
 
-            System.out.print("=> 정말로 삭제하실래요? (Y/N) : ");
-            String answer = sc.next();
+            System.out.print("=> 정말로 삭제하실래요? (Y/N) : "); // 입력을 위한 출력 구문
+            String answer = sc.next(); // 선택을 입력
             System.out.println();
 
-            if (answer.equalsIgnoreCase("Y")) {
-                list.remove((int) idlist.get(id - 1));
-                System.out.println("선택한 단어 삭제 완료 !!!");
+            if (answer.equalsIgnoreCase("Y")) { // Y인 경우
+                list.remove((int) idlist.get(id - 1)); // 단어를 삭제
+                System.out.println("선택한 단어 삭제 완료 !!!"); // 결과 출력
                 System.out.println();
             } else {
-                System.out.println("취소되었습니다.");
+                System.out.println("취소되었습니다."); // 결과 출력
                 System.out.println();
             }
 
@@ -125,6 +136,9 @@ public class WordCRUD implements ICRUD {
     }
 
 
+    // 데이터를 보여주는 메소드의 모음
+
+    // listAll : 전체 데이터를 보여주는 메소드
     @Override
     public void listAll() {
         if (list.isEmpty()) {
@@ -143,31 +157,33 @@ public class WordCRUD implements ICRUD {
         }
     }
 
+    // 입력된 level에 맞춰진 리스트를 출력하는 메소드
     public void listAll(int level) {
         System.out.println("--------------------------------");
         for (int i = 0; i < list.size(); i++) {
-            System.out.printf("%-2d ", i + 1);
-            System.out.println(list.get(i).toString());
+            System.out.printf("%-2d ", i + 1); // index 출력
+            System.out.println(list.get(i).toString()); // toString에 맞춰진 결과 출력
         }
         System.out.println("--------------------------------");
         System.out.println();
     }
 
+    // 입력된 keyword에 맞춰진 리스트를 출력하는 메소드
     public ArrayList<Integer> listAll(String keyword) {
 
-        ArrayList<Integer> idlist = new ArrayList<>();
+        ArrayList<Integer> idlist = new ArrayList<>(); // 새로운 idlist 생성
 
-        int count = 0;
+        int count = 0; // index를 위한 변수
 
         System.out.println("------------------------------");
         for (int i = 0; i < list.size(); i++) {
             String word = list.get(i).getWord(); // 영어 단어 가져오기
 
-            if (word.contains(keyword)) {
-                System.out.print(count + 1 + " ");
-                System.out.println(list.get(i).toString());
-                idlist.add(i);
-                count++;
+            if (word.contains(keyword)) { // 값을 하나 불러와서 있는지 없는지 구별
+                System.out.print(count + 1 + " "); // index 출력
+                System.out.println(list.get(i).toString()); // toString에 맞춰진 결과 출력
+                idlist.add(i); // 값을 idlist에 저장
+                count++; // 개수 증가
             } else {
                 continue;
             }
@@ -183,6 +199,7 @@ public class WordCRUD implements ICRUD {
         }
         return idlist;
     }
+
 
     public void searchLevel() {
         // TODO Auto-generated method stub

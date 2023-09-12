@@ -10,6 +10,7 @@ public class WordCRUD implements ICRUD {
     ArrayList<Word> list;
     Scanner sc;
     final String fname = "Dictonary.txt";
+
     // 생성자
     WordCRUD(Scanner sc) {
         list = new ArrayList<>();
@@ -19,10 +20,10 @@ public class WordCRUD implements ICRUD {
     @Override
     public Object add() {
         // 난이도, 새 단어 입력 받기
-        System.out.print("=> 난이도 (1, 2, 3) & 새 단어 입력 : ");
-        int level = sc.nextInt();
-        String word = sc.nextLine();
-
+        System.out.print("=> 난이도 (1, 2, 3) & 새 단어 입력 : "); // 입력을 취한 출력 구문
+        int level = sc.nextInt(); // 난이도 입력
+        String word = sc.nextLine(); // 새 단어 입력
+        word = word.trim(); // 문자열 양쪽 공백 제거
         // 뜻 입력 받기
         System.out.print("뜻 입력 : ");
         String meaning = sc.nextLine();
@@ -51,25 +52,18 @@ public class WordCRUD implements ICRUD {
         } else {
             System.out.print("=> 수정할 단어 검색 : ");
             String keyword = sc.next();
-            System.out.println();
-
             ArrayList<Integer> idlist = this.listAll(keyword);
 
-            if(idlist.isEmpty()){
-                System.out.println("------------------------------");
-                System.out.println("데이터가 없습니다.");
-                System.out.println("------------------------------");
-                System.out.println();
-                return -1;
+            if (idlist.isEmpty()) {
+                return 0;
             }
-
 
 
             System.out.print("=> 수정할 번호 선택 : ");
             int id = sc.nextInt();
             sc.nextLine();
 
-            if(idlist.size() < id || 0 > id){
+            if (idlist.size() < id || 0 > id) {
                 System.out.println();
                 System.out.println("------------------------------");
                 System.out.println("데이터가 없습니다.");
@@ -85,9 +79,7 @@ public class WordCRUD implements ICRUD {
 
             word.setMeaning(meaning);
             System.out.println();
-            System.out.println("------------------------------");
-            System.out.println("단어가 수정되었습니다.");
-            System.out.println("------------------------------");
+            System.out.println("단어 수정이 성공적으로 되었습니다!!");
             System.out.println();
         }
         return 0;
@@ -118,7 +110,7 @@ public class WordCRUD implements ICRUD {
 
             if (answer.equalsIgnoreCase("Y")) {
                 list.remove((int) idlist.get(id - 1));
-                System.out.println("단어가 삭제되었습니다.");
+                System.out.println("선택한 단어 삭제 완료 !!!");
                 System.out.println();
             } else {
                 System.out.println("취소되었습니다.");
@@ -199,6 +191,7 @@ public class WordCRUD implements ICRUD {
         } else {
             System.out.print("=> 원하는 레벨은? (1~3) ");
             int level = sc.nextInt();
+            System.out.println();
             listAll(level);
         }
 
@@ -214,22 +207,27 @@ public class WordCRUD implements ICRUD {
         } else {
             System.out.print("=> 원하는 단어는? ");
             String keyword = sc.next();
+            System.out.println();
             listAll(keyword);
         }
     }
 
+    /***
+     * 파일로부터 데이터를 읽어오는 메소드.
+     * @throws IOException
+     * @throws FileNotFoundException
+     */
     public void loadFile() throws IOException, FileNotFoundException {
 
-        BufferedReader br = new BufferedReader(new FileReader(fname));
-
+        BufferedReader br = new BufferedReader(new FileReader(fname)); // FileReader
         String line = null;
 
         int count = 0;
 
-        while(true) {
+        while (true) {
             line = br.readLine();
 
-            if(line == null)
+            if (line == null)
                 break;
 
             String data[] = line.split("\\|");
@@ -243,7 +241,7 @@ public class WordCRUD implements ICRUD {
         }
 
         br.close();
-        System.out.println("===> "  + count + "개 로딩완료!");
+        System.out.println("===> " + count + "개 로딩완료!");
         System.out.println();
 
     }
@@ -254,13 +252,14 @@ public class WordCRUD implements ICRUD {
 //		PrintWriter pr = new PrintWriter(new FileWriter("test.txt"));
         PrintWriter pr = new PrintWriter(new FileWriter(fname));
 
-        for(Word one : list) {
+        for (Word one : list) {
             pr.write(one.toFileString() + "\n");
             // write는 마지막에 개행문자가 없으므로 넣어주어야 한다.
         }
 
         pr.close();
-        System.out.println("===> 데이터 저장 완료!");
+        System.out.println("모든 단어 파일 저장 완료 !!!");
+        System.out.println();
 
     }
 }

@@ -16,9 +16,9 @@ public class Execute {
 
     // 메인 run method
     public void run() throws IOException {
+        wordCRUD.loadFile();
         System.out.println("*** 영단어 마스터 ***"); // 처음에만 출력
         System.out.println();
-        wordCRUD.loadFile();
 
         // 프로그램 반복
         while (true) {

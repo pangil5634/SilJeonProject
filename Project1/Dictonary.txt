@@ -3,4 +3,4 @@
 2|Kimchi|김치
 2|juice|음료수
 1|pay|임금
-3|attention|집중
+3|attention|집중하기

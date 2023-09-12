@@ -7,14 +7,14 @@ import java.util.Scanner;
 public class WordCRUD implements ICRUD {
 
     // 변수 선언
-    ArrayList<Word> list;
-    Scanner sc;
-    final String fname = "Dictonary.txt";
+    ArrayList<Word> list; // 단어를 저장하고 있는 리스트
+    Scanner sc; // 입력을 위한 Scanner 선언
+    final String fname = "Dictonary.txt"; // 파일을 읽고 저장할 파일명을 저장하는 변수
 
     // 생성자
     WordCRUD(Scanner sc) {
-        list = new ArrayList<>();
-        this.sc = sc;
+        list = new ArrayList<>(); // class 생성 시 새로운 arrayList를 할당시킨다.
+        this.sc = sc; // 파라미터로 전해 받은 scanner 객체를 저장
     }
 
     @Override
@@ -24,12 +24,13 @@ public class WordCRUD implements ICRUD {
         int level = sc.nextInt(); // 난이도 입력
         String word = sc.nextLine(); // 새 단어 입력
         word = word.trim(); // 문자열 양쪽 공백 제거
+
         // 뜻 입력 받기
-        System.out.print("뜻 입력 : ");
-        String meaning = sc.nextLine();
+        System.out.print("뜻 입력 : "); // 입력을 위한 출력 구문
+        String meaning = sc.nextLine(); // 뜻 입력
         System.out.println();
 
-        return new Word(0, level, word, meaning);
+        return new Word(0, level, word, meaning); // 입력 받은 난이도, 단어, 뜻을 Word 타입으로 반환
     }
 
     // 입력 받은 데이터를 리스트에 추가하는 메소드

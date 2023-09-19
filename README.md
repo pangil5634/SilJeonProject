@@ -1,3 +1,6 @@
+![배너](https://github.com/pangil5634/SilJeonProject/assets/54162245/ca431916-99d6-48d5-88c0-6a59b82533af)
+
+
 # SilJeonProject
 <h2>2023년도 2학기 실전프로젝트 1 - KimKwangil</h2>
 <p>프로젝트마다 진행된 사항들을 관리하고 기록하기 위한 repository입니다.</p>
@@ -6,7 +9,7 @@
 <details>
     <summary>Project1 : WordMasterProject</summary>
     <div markdown="1"> 
-        <h3>Project1 : WordMasterProject</h3>
+        <h3>1️⃣Project1 : WordMasterProject</h3>
         <p><b>Assignment : Week1~3</b></p>
     
         <hr>
@@ -70,7 +73,7 @@
 
 
 <details>
-    <summary>Project2 : Netilfy</summary>
+    <summary>2️⃣Project2 : Netilfy</summary>
     <div markdown="1">
         <h3>Project2 : Netilfy를 활용한 웹페이지 구축</h3>
         <p><b>Assignment : Week4~6</b></p>

@@ -7,9 +7,9 @@
 
 <hr>
 <details>
-    <summary>Project1 : WordMasterProject</summary>
+    <summary>1️⃣ Project1 : WordMasterProject</summary>
     <div markdown="1"> 
-        <h3>1️⃣Project1 : WordMasterProject</h3>
+        <h3>Project1 : WordMasterProject</h3>
         <p><b>Assignment : Week1~3</b></p>
     
         <hr>
@@ -73,7 +73,7 @@
 
 
 <details>
-    <summary>2️⃣Project2 : Netilfy</summary>
+    <summary>2️⃣ Project2 : Netilfy</summary>
     <div markdown="1">
         <h3>Project2 : Netilfy를 활용한 웹페이지 구축</h3>
         <p><b>Assignment : Week4~6</b></p>

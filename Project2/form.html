@@ -16,12 +16,12 @@
         <div id = "section1">
             <fieldset>
                 <legend id = "legend1">이력서</legend>
-                <p><span id = "span1">이름 : </span> </span><input type = "text"></p>
-                <p><span id = "span1" >학번 : </span><input type = "text"></p>
+                <p><span id = "span1">이름 : </span> </span><input type = "text" required></p>
+                <p><span id = "span1" >학번 : </span><input type = "text" required></p>
                 <p><span id = "span1">성별 : </span> </span>
-                    <input type = "radio" id = "man", name = "gender" value = "MAN">
+                    <input type = "radio" id = "man", name = "gender" value = "MAN" required>
                     <label for = "man">남자</label>
-                    <input type = "radio" id = "woman", name = "gender" value = "WOMAN">
+                    <input type = "radio" id = "woman", name = "gender" value = "WOMAN" required>
                     <label for = "woman">여자</label>
                 </p>
                 <p><span id = "span1">RC : </span>
@@ -39,7 +39,7 @@
                     <label for="woman">카이퍼</label>
                 </p>
                 <p>학부 :
-                    <select>
+                    <select required>
                         <option value="글로벌리더십학부">글로벌리더십학부</option>
                         <option value="전산전자공학부">전산전자공학부</option>
                         <option value="기계제어공학부">기계제어공학부</option>
@@ -57,15 +57,38 @@
 
                     </select>
                 </p>
+
+                <p>
+                    사용해본 기숙사 :
+                    <input type="checkbox" name="Domi"><label>비전관</label>
+                    <input type="checkbox" name="Domi"><label>창조관</label>
+                    <input type="checkbox" name="Domi"><label>벧엘관</label>
+                    <input type="checkbox" name="Domi"><label>로뎀관</label>
+                    <input type="checkbox" name="Domi"><label>국제관</label>
+                    <input type="checkbox" name="Domi"><label>은혜관</label>
+                    <input type="checkbox" name="Domi"><label>행복관</label>
+                </p>
+                <p>
+                    기억에 남는 행사 : 
+                    <input list="HguLife" required>
+                    <datalist id="HguLife">
+                        <option value="한스트">
+                        <option value="선교축제">
+                        <option value="G-impact">
+                        <option value="가을축제">
+                        <option value="학부합창대회">
+                        <option value="졸업식">
+                    </datalist>
+                </p>
             </fieldset>
         </div>
         <div id = "section2">
             <fieldset>
                 <legend id = "legend1">질문</legend>
                 <p>Q1. 지원 동기</p>
-                <textarea id = "content_textarea"></textarea>
+                <textarea id = "content_textarea" required></textarea>
                 <p>Q2. 자신의 장단점</p>
-                <textarea id = "content_textarea"></textarea>
+                <textarea id = "content_textarea" required></textarea>
 
             </fieldset>
         </div>
@@ -73,6 +96,8 @@
             <fieldset>
                 <input type = "submit" value = "submit">
                 <input type = "reset" value = "reset">
+                <input type = "date" style = "float : right;" required>
+
             </fieldset>
         </div>
     </form>

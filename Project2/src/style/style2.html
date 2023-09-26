@@ -18,15 +18,15 @@
         <div id="section_middle">
             <div id="section_menubar">
                 <ul id="section_list">
-                    <li id="section_list_item" onclick="">Stylesheet 1
+                    <li id="section_list_item" onclick="location.href='./style1.html'">Stylesheet 1
                     </li>
-                    <li id="section_list_item" onclick="">Stylesheet 2
+                    <li id="section_list_item" onclick="location.href='./style2.html'">Stylesheet 2
                     </li>
-                    <li id="section_list_item" onclick="">Stylesheet 3
+                    <li id="section_list_item" onclick="alert('현재 페이지는 없습니다.')">Stylesheet 3
                     </li>
-                    <li id="section_list_item" onclick="">Stylesheet 4
+                    <li id="section_list_item" onclick="alert('현재 페이지는 없습니다.')">Stylesheet 4
                     </li>
-                    <li id="section_list_item" onclick="">No Stylesheet
+                    <li id="section_list_item" onclick="location.href='../nostyle/nostyle.html'">No Stylesheet
                     </li>
                 </ul>
             </div>
@@ -39,13 +39,13 @@
                     the following links:<br>
                     <a href="./style1.html">Stylesheet1</a>,
                     <a href="./style2.html">Stylesheet2</a>,
-                    <a href="" onclick>Stylesheet3</a>,
-                    <a href="">Stylesheet4</a>.
+                    <a href="" onclick="alert('현재 페이지는 없습니다.')">Stylesheet3</a>,
+                    <a href="" onclick="alert('현재 페이지는 없습니다.')">Stylesheet4</a>,
+                    <a href="../nostyle/nostyle.html">No Stylesheet</a>
                 </p>
                 <h2>No Styles</h2>
                 <p>This page uses DIV elements to group different sections of the HTML page. Click here to see how the
-                    page
-                    looks like with no stylesheet:<br><a href="#" onclick="noStyles();return false">No Stylesheet</a>.
+                    page looks like with no stylesheet:<br><a href="../nostyle/nostyle.html">No Stylesheet</a>.
                 </p>
             </div>
 

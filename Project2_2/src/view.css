@@ -19,3 +19,8 @@
 #data6 {
     height: 30vh;
 }
+
+#button2 {
+    background-color: rgb(238, 135, 135);
+    border: 1px solid rgb(238, 135, 135);
+}

@@ -2,7 +2,7 @@
     margin : 10px 22px;
 }
 
-#exampleFormControlTextarea1{
+#data6{
     height : 30vh;
 }
 
@@ -18,4 +18,20 @@
 
 #my-mb-3-2{
     margin-left: 2%;
+}
+
+#button1, #button2{
+    width : 100px;
+}
+#button2{
+    background-color: rgb(238, 135, 135);
+    border : 1px solid rgb(238, 135, 135);
+}
+
+#button1:hover, #button2:hover{
+    opacity: 50%;
+}
+
+.form-control{
+    background-color: #EAECEF;
 }

@@ -88,6 +88,7 @@ document
 function deleteData() {
     if (confirm('게시물을 삭제할까요?')) {
         alert("삭제되었습니다.");
+        window.location.href = "../index.html"
     } else {
         alert("취소 되었습니다.");
     }

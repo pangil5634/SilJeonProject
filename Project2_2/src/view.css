@@ -20,6 +20,10 @@
     height: 30vh;
 }
 
+#button1,
+#button2 {
+    width: 100px;
+}
 #button2 {
     background-color: rgb(238, 135, 135);
     border: 1px solid rgb(238, 135, 135);

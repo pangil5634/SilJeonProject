@@ -6,35 +6,35 @@ let listJson = [
         week: "1주차",
         count: "1차시",
         subject: "실전프로젝트",
-        date: "2023.09.01",
+        date: "2023-09-01",
         content: "안녕하세요!"
     }, {
         title: "OT 내용 정리",
         week: "1주차",
         count: "1차시",
         subject: "실전프로젝트",
-        date: "2023.09.01",
+        date: "2023-09-01",
         content: "안녕하세요!"
     }, {
         title: "2주차 1차시 수업 정리",
         week: "2주차",
         count: "1차시",
         subject: "컴퓨터구조",
-        date: "2023.09.09",
+        date: "2023-09-09",
         content: "안녕하세요!"
     }, {
         title: "1차 퀴즈 준비",
         week: "4주차",
         count: "1차시",
         subject: "이산 수학",
-        date: "2023.09.21",
+        date: "2023-09-21",
         content: "안녕하세요!"
     }, {
         title: "프로젝트1",
         week: "4주차",
         count: "2차시",
         subject: "실전 프로젝트",
-        date: "2023.09.20",
+        date: "2023-09-20",
         content: "안녕하세요!"
     }
     // 나머지 데이터 항목들
@@ -59,11 +59,20 @@ document
     .value = memberList
     .get(Number(dataValue))
     .subject;
+
+// const parts = memberList
+//     .get(Number(dataValue))
+//     .date
+//     .replace(/-/g, '/');
+
+// document
+//     .getElementById('data2')
+//     .value = Date(parts);
 document
     .getElementById('data2')
     .value = memberList
     .get(Number(dataValue))
-    .date;
+    .date; // "YYYY-MM-DD" 형식의 문자열을 그대로 사용
 document
     .getElementById('data3')
     .value = memberList

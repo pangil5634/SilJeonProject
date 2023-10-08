@@ -72,7 +72,7 @@ document
     .getElementById('data2')
     .value = memberList
     .get(Number(dataValue))
-    .date; // "YYYY-MM-DD" 형식의 문자열을 그대로 사용
+    .date; 
 document
     .getElementById('data3')
     .value = memberList

@@ -1,0 +1,47 @@
+#section_body {
+    width: 500px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    top: 25vh;
+
+}
+
+#input1,
+#input2 {
+    width: 300px;
+    height: 46px;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+}
+#input1 {
+
+    border-radius: 5px 5px 0 0;
+}
+#input2 {
+
+    border-radius: 0 0 5px 5px;
+}
+
+#input1:focus,
+#input2:focus {
+    outline: none !important;
+    border-color: #2ec0da;
+    box-shadow: 0 0 10px #2ec0da;
+}
+
+#checkbox1 {
+    margin-top: 12px;
+}
+
+#submit1 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 300px;
+    height: 46px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    font-size: 20px;
+    border-radius: 5px;
+}

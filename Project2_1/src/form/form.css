@@ -1,0 +1,41 @@
+#section1,
+#section2,
+#section3 {
+    margin: 10px;
+}
+
+#content_textarea {
+    width: 100%;
+    height: 150px;
+    resize: none;
+
+}
+
+#form1 {
+    width: 80%;
+    margin: 0 auto;
+}
+
+#form1 > h1 {
+    text-align: center;
+    color: blueviolet;
+}
+
+#legend1 {
+    font-size: 25px;
+    font-weight: bold;
+    color: blueviolet;
+}
+
+#img1 {
+    text-align: center;
+    width : 80%;
+    margin: 0 auto;
+}
+#banner1{
+    width : 100%;
+    /* height : 100px; */
+}
+#span1{
+    width : 500px;
+}

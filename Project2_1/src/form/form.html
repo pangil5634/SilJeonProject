@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form html</title>
+    <link href="./form.css" rel="stylesheet">
+    <link href="../..//font.css" rel="stylesheet">
+    <link href = "../../home.css" rel = "stylesheet">
+</head>
+<body>
+    <a href = "../../index.html" id = "a_home">Home</a>
+    <div id = "img1">
+        <img src = "../../image/baner2.png" id = "banner1">
+    </div>
+    
+    <form id = "form1">
+        <hr color="blueviolet" width="100%">
+        <h1>이력서 폼</h1>
+        <hr color="blueviolet" width="100%">
+        <div id = "section1">
+            <fieldset>
+                <legend id = "legend1">이력서</legend>
+                <p><span id = "span1">이름 : </span> </span><input type = "text" required></p>
+                <p><span id = "span1" >학번 : </span><input type = "text" required></p>
+                <p><span id = "span1">성별 : </span> </span>
+                    <input type = "radio" id = "man", name = "gender" value = "MAN" required>
+                    <label for = "man">남자</label>
+                    <input type = "radio" id = "woman", name = "gender" value = "WOMAN" required>
+                    <label for = "woman">여자</label>
+                </p>
+                <p><span id = "span1">RC : </span>
+                    <input type="radio" id="RC1" , name="RC" value="RC1">
+                    <label for="man">토레이</label>
+                    <input type="radio" id="RC2" , name="RC" value="RC2">
+                    <label for="woman">손양원</label>
+                    <input type="radio" id="RC3" , name="RC" value="RC3">
+                    <label for="man">장기려</label>
+                    <input type="radio" id="RC4" , name="RC" value="RC4">
+                    <label for="woman">열송학사</label>
+                    <input type="radio" id="RC5" , name="RC" value="RC5">
+                    <label for="man">카마이클</label>
+                    <input type="radio" id="RC6" , name="RC" value="RC6">
+                    <label for="woman">카이퍼</label>
+                </p>
+                <p>학부 :
+                    <select required>
+                        <option value="글로벌리더십학부">글로벌리더십학부</option>
+                        <option value="전산전자공학부">전산전자공학부</option>
+                        <option value="기계제어공학부">기계제어공학부</option>
+                        <option value="공간환경시스템공학부">공간환경시스템공학부</option>
+                        <option value="생명과학부">생명과학부</option>
+                        <option value="커뮤니케이션학부">커뮤니케이션학부</option>
+                        <option value="ICT창업학부">ICT창업학부</option>
+                        <option value="법학부">법학부</option>
+                        <option value="국제어문학부">국제어문학부</option>
+                        <option value="콘텐트융합디자인학부">콘텐트융합디자인학부</option>
+                        <option value="상담심리사회복지학부">상담심리사회복지학부</option>
+                        <option value="창의융합교육원">창의융합교육원</option>
+                        <option value="AI융합교육원">AI융합교육원</option>
+                        <option value="신앙교육원">신앙교육원</option>
+
+                    </select>
+                </p>
+
+                <p>
+                    사용해본 기숙사 :
+                    <input type="checkbox" name="Domi"><label>비전관</label>
+                    <input type="checkbox" name="Domi"><label>창조관</label>
+                    <input type="checkbox" name="Domi"><label>벧엘관</label>
+                    <input type="checkbox" name="Domi"><label>로뎀관</label>
+                    <input type="checkbox" name="Domi"><label>국제관</label>
+                    <input type="checkbox" name="Domi"><label>은혜관</label>
+                    <input type="checkbox" name="Domi"><label>행복관</label>
+                </p>
+                <p>
+                    기억에 남는 행사 : 
+                    <input list="HguLife" required>
+                    <datalist id="HguLife">
+                        <option value="한스트">
+                        <option value="선교축제">
+                        <option value="G-impact">
+                        <option value="가을축제">
+                        <option value="학부합창대회">
+                        <option value="졸업식">
+                    </datalist>
+                </p>
+            </fieldset>
+        </div>
+        <div id = "section2">
+            <fieldset>
+                <legend id = "legend1">질문</legend>
+                <p>Q1. 지원 동기</p>
+                <textarea id = "content_textarea" required></textarea>
+                <p>Q2. 자신의 장단점</p>
+                <textarea id = "content_textarea" required></textarea>
+
+            </fieldset>
+        </div>
+        <div id = "section3">
+            <fieldset>
+                <input type = "submit" value = "submit">
+                <input type = "reset" value = "reset">
+                <input type = "date" style = "float : right;" required>
+
+            </fieldset>
+        </div>
+    </form>
+</body>
+</html>

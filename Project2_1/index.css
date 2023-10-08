@@ -1,0 +1,26 @@
+ul {
+
+    list-style: none;
+    padding: 0;
+}
+
+li:first-child{
+    margin : 0;
+}
+li {
+    margin : 0px 10px ;
+    padding: 10px 0;
+    color: black;
+    background-color: aqua;
+    width: 150px;
+    text-align: center;
+    border-radius: 10px;
+    float : left;
+
+}
+
+a {
+    text-decoration: none;
+    color: black;
+
+}

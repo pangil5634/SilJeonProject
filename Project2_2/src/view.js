@@ -102,3 +102,13 @@ function deleteData() {
         alert("취소 되었습니다.");
     }
 }
+
+// 현재 URL 가져오기
+const url = new URL(window.location.href);
+
+// 'data' 파라미터 값을 가져오기
+const dataParam = url.searchParams.get('data');
+
+function editMoving() {
+    window.location.href = './edit.html?data=' + dataParam;
+}

@@ -1,0 +1,29 @@
+#section1 {
+    width: 500px;
+    height: 500px;
+    background-color: beige;
+}
+
+#row1 {
+    width: 100%;
+    height: calc(100%/3);
+    background-color: aqua;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#row2 {
+    width: 100%;
+    height: calc(100%/3);
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+    align-items: ;
+}
+
+#block1 {
+    width: 50px;
+    height: 50px;
+    background-color: brown;
+}

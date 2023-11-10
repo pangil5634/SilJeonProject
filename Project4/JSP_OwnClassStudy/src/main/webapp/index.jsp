@@ -9,7 +9,6 @@
 </h1>
 <br/>
 <a href="hello-servlet">Hello Servlet</a>
-<%--<jsp:forward page="posts.jsp"></jsp:forward>--%>
 <%
     response.sendRedirect("./posts.jsp");
 %>

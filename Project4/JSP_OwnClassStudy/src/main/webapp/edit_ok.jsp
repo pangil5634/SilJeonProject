@@ -45,12 +45,6 @@
 <html>
 <head>
   <title>Title</title>
-  <%--    <p><%=subject%></p>--%>
-  <%--    <p><%=date%></p>--%>
-  <%--    <p><%=title%></p>--%>
-  <%--    <p><%=content%></p>--%>
-  <%--    <p><%=week%></p>--%>
-  <%--    <p><%=count%></p>--%>
 
 </head>
 <body>

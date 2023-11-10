@@ -7,10 +7,13 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-  <head>
-    <title>$Title$</title>
-  </head>
-  <body>
-  $END$
-  </body>
+<head>
+    <title>DBForm</title>
+</head>
+<body>
+<form action = "DBForm_ok.jsp" method="post">
+  사용자 이름 : <input type = "text" name = "username"/>
+  <input type = "submit" value = "전송하기" />
+</form>
+</body>
 </html>

@@ -51,18 +51,6 @@
 </nav>
 
 <table id = "list" width = "90%">
-<%--  <tr>--%>
-<%--    <th>Id</th>--%>
-<%--    <th>Subject</th>--%>
-<%--    <th>Week</th>--%>
-<%--    <th>Count</th>--%>
-<%--    <th>Data</th>--%>
-<%--  </tr>--%>
-<%--  <%--%>
-<%--    DAO dao = new DAO();--%>
-<%--    List<VO> list = dao.getDataList();--%>
-<%--    request.setAttribute("list", list);--%>
-<%--  %>--%>
   <c:forEach items = "${list}" var = "u">
     <tr>
       <td>${u.getIndex()}</td>

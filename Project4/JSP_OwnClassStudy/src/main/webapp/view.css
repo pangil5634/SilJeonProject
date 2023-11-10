@@ -1,0 +1,30 @@
+#div1 {
+    margin: 10px 22px;
+}
+
+#my-mb-3-1,
+#my-mb-3-2 {
+    width: 49%;
+    float: left;
+
+}
+
+#my-mb-3-2 {
+    margin-left: 2%;
+}
+.form-label {
+    font-weight: bold;
+}
+
+#data6 {
+    height: 30vh;
+}
+
+#button1,
+#button2 {
+    width: 100px;
+}
+#button2 {
+    background-color: rgb(238, 135, 135);
+    border: 1px solid rgb(238, 135, 135);
+}

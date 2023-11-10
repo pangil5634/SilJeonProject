@@ -14,8 +14,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>수업 정리 사이트</title>
-  <link rel="stylesheet" href="./src/my.css">
-  <link rel="stylesheet" href="./index.css">
+  <link rel="stylesheet" href="./my.css">
   <link
           href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
           rel="stylesheet"
@@ -23,7 +22,7 @@
           crossorigin="anonymous">
 </head>
 <body>
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg">
   <div class="container-fluid">
     <a class="navbar-brand" href="./posts.jsp">OwnClassStudy</a>
     <button
@@ -32,7 +31,7 @@
             data-bs-toggle="collapse"
             data-bs-target="#navbarNavDropdown"
             aria-controls="navbarNavDropdown"
-            aria-expanded="false"
+            aria-expanded="falsheaderDive"
             aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -42,13 +41,16 @@
           <a class="nav-link active" aria-current="page" href="./posts.jsp">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./add.jsp">Add</a>
+          <a class="nav-link active" href="./add.jsp">Add</a>
         </li>
 
       </ul>
     </div>
   </div>
 </nav>
+<div class= "div_header">
+  <p>각 행의 "제목"을 누르면 세부 내용을 확인할 수 있습니다.</p>
+</div>
 
 <table id = "list" width = "90%">
   <c:forEach items = "${list}" var = "u">
@@ -67,10 +69,10 @@
   <thead>
   <tr>
     <th>#</th>
-    <th>제목</th>
+    <th>과목이름</th>
     <th>주차</th>
     <th>차시</th>
-    <th>과목이름</th>
+    <th>제목</th>
     <th>작성날짜</th>
   </tr>
   </thead>
@@ -80,13 +82,14 @@
     request.setAttribute("list", list);
   %>
   <tbody>
-<c:forEach items = "${list}" var = "u">
+
+<c:forEach items = "${list}" var = "u" varStatus="status">
   <tr>
-    <td>${u.getIndex()}</td>
-    <td><a href="./view.jsp?index=${u.getIndex()}"  id="my_a1">${u.title}</a></td>
+    <td>${status.index + 1}</td>
+    <td>${u.subject}</td>
     <td>${u.week}</td>
     <td>${u.count}</td>
-    <td>${u.subject}</td>
+    <td><a href="./view.jsp?index=${u.getIndex()}"  id="my_a1">${u.title}</a></td>
     <td>${u.date}</td>
 <%--    <td>--%>
 <%--      OT 내용 정리--%>

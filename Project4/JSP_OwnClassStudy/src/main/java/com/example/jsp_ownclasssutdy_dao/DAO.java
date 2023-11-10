@@ -16,7 +16,7 @@ public class DAO{
     private final String DATA_UPDATE = "update OwnClassStudy set subject=?, date=?, week=?, title=?, content=?, count=? where dataIndex=?";
     private final String DATA_DELETE = "delete from OwnClassStudy where dataIndex=?";
     private final String DATA_GET = "select * from OwnClassStudy where dataIndex=?";
-    private final String DATA_LIST = "select * from OwnClassStudy";
+    private final String DATA_LIST = "select * from OwnClassStudy order by week asc; ";
 
 //    private final String DATA_LIST = "select * from OwnClassStudy order by dataIndex desc";
 

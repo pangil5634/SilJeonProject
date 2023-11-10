@@ -30,7 +30,7 @@
 </head>
 
 <body>
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg">
   <div class="container-fluid">
     <a class="navbar-brand" href="./posts.jsp">OwnClassStudy</a>
     <button
@@ -49,7 +49,7 @@
           <a class="nav-link active" aria-current="page" href="./posts.jsp">Home</a>
         </li>
         <li class="nav-item">
-          <label class="nav-link" onclick="alert('현재 페이지입니다.')">Add</label>
+          <label class="nav-link active" onclick="alert('현재 페이지입니다.')">Add</label>
         </li>
 
       </ul>
@@ -90,7 +90,7 @@
   </div>
   <div class="mb-3">
     <label for="data6" class="form-label">내용</label>
-    <textarea class="form-control" id="data6" rows="3" name="content" id = "data6"><%=vo.getContent()%>"</textarea>
+    <textarea class="form-control" id="data6" rows="3" name="content" id = "data6"><%=vo.getContent()%></textarea>
   </div>
   <input class="btn btn-primary" type="submit" value="수정하기" id="button1">
   <input class="btn btn-primary" type="reset" value="Reset" id="button2">

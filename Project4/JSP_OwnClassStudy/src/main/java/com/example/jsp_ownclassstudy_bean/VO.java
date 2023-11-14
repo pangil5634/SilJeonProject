@@ -12,6 +12,16 @@ public class VO {
     private String title; // 제목
     private String content; // 내용
 
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
+    }
+
+    private String photo; // 사진
+
     // getter and setter
 
     public int getIndex(){

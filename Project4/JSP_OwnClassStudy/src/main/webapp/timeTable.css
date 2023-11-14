@@ -1,0 +1,22 @@
+#div_content{
+    width : 50%;
+    margin : 0 auto !important;
+
+}
+
+#div_content > h3{
+    padding : 20px 0px;
+    text-align: center;
+}
+
+.table > tbody > tr {
+    height : 70px;
+}
+
+.table > tbody > tr > th:nth-child(1) {
+    width: 10%;
+}
+.table > tbody > tr > th:nth-child(2), .table > tbody >  tr > th:nth-child(3), .table > tbody> tr   > th:nth-child(4), .table > tbody  >tr > th:nth-child(5), .table > tbody >tr> th:nth-child(6){
+    width: 18%;
+}
+

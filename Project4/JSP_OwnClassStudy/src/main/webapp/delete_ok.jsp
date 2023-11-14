@@ -1,5 +1,7 @@
 <%@ page import="com.example.jsp_ownclasssutdy_dao.DAO" %>
-<%@ page import="com.example.jsp_ownclassstudy_bean.VO" %><%--
+<%@ page import="com.example.jsp_ownclassstudy_bean.VO" %>
+<%@ page import="java.io.File" %>
+<%@ page import="com.example.jsp_ownclasssutdy_common.FileUpload" %><%--
   Created by IntelliJ IDEA.
   User: kimkwang-il
   Date: 11/10/23
@@ -13,6 +15,10 @@
     VO vo = new VO();
     vo.setIndex(Integer.parseInt(dataIndex));
     DAO dao = new DAO();
+
+    String filename = dao.getPhotoFilename(dataIndex);
+    if(filename != null)
+        FileUpload.deleteFile(request, filename);
     int deleteResult = dao.deleteData(vo);
 
     boolean isDeleteSuccessful = (deleteResult == 1);

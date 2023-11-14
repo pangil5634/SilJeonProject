@@ -47,6 +47,12 @@
                         <li class="nav-item">
                             <label class="nav-link active" onclick="alert('현재 페이지입니다.')">Add</label>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="./timeTable.html">TimeTable</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="./etc/UserSurveyForm.html">Survey</a>
+                        </li>
 
                     </ul>
                 </div>
@@ -57,7 +63,9 @@
             action="./add_ok.jsp"
             name="form1"
             method="post"
-            onsubmit="return Checkform()">
+            onsubmit="return Checkform(1)"
+            enctype="multipart/form-data"
+        >
             <div class="mb-3" id="my-mb-3-1">
                 <label for="data1" class="form-label">과목 이름</label>
                 <input
@@ -89,7 +97,7 @@
                     placeholder="Ex : 1차시"
                     id="data4">
             </div>
-            <div class="mb-3">
+            <div class="mb-2" id = "my-mb-3-1">
                 <label for="data5" class="form-label">제목</label>
                 <input
                     type="text"
@@ -97,6 +105,15 @@
                     name="title"
                     placeholder="Ex : 수업 정리"
                     id="data5">
+            </div>
+            <div class="mb-2" id = "my-mb-3-2">
+                <label for="data7" class="form-label">파일</label>
+                <input
+                        type="file"
+                        class="form-control"
+                        name="photo"
+                        placeholder="Ex : 수업 정리"
+                        id="data7">
             </div>
             <div class="mb-3">
                 <label for="data6" class="form-label">내용</label>

@@ -15,11 +15,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>수업 정리 사이트</title>
   <link rel="stylesheet" href="./my.css">
-  <link
-          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
-          rel="stylesheet"
-          integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
-          crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"  integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+        crossorigin="anonymous">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg">
@@ -42,6 +39,12 @@
         </li>
         <li class="nav-item">
           <a class="nav-link active" href="./add.jsp">Add</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="./timeTable.html">TimeTable</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="./etc/UserSurveyForm.html">Survey</a>
         </li>
 
       </ul>

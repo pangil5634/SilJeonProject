@@ -45,6 +45,13 @@
           <a class="nav-link active" href="./add.jsp">Add</a>
         </li>
 
+        <li class="nav-item">
+          <a class="nav-link active" href="./timeTable.html">TimeTable</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="./etc/UserSurveyForm.html">Survey</a>
+        </li>
+
       </ul>
     </div>
   </div>
@@ -74,7 +81,7 @@
             class="form-control"
             id="data2"
             value=<%=vo.getDate()%>
-            name="date"
+                    name="date"
             disabled="disabled">
   </div>
   <div class="mb-3" id="my-mb-3-1">
@@ -84,7 +91,7 @@
             class="form-control"
             id="data3"
             value=<%=vo.getWeek() + "주차"%>
-            name="week"
+                    name="week"
             disabled="disabled">
   </div>
   <div class="mb-3" id="my-mb-3-2">
@@ -94,7 +101,7 @@
             class="form-control"
             id="data4"
             value=<%=vo.getCount()+ "차"%>
-            name="count"
+                    name="count"
             disabled="disabled">
 
   </div>
@@ -117,8 +124,17 @@
             name="content"
             disabled="disabled"><%=vo.getContent()%></textarea>
   </div>
-  <input class="btn btn-primary" type="button" value="Edit" id="button1" onclick="editMoving()">
-  <input class="btn btn-primary" type="button" value="Delete" id="button2" onclick="deleteRecord()">
+  <div class="mb-3">
+    <label for="data6" class="form-label">사진</label>
+    <br>
+    <img src="${pageContext.request.contextPath}/upload/<%=vo.getPhoto()%>" alt="파일이 없습니다." height="500vh" id="myPhoto">
+
+
+
+
+  </div>
+  <input class="btn btn-primary" type="button" value="수정하기" id="button1" onclick="editMoving()">
+  <input class="btn btn-primary" type="button" value="삭제하기" id="button2" onclick="deleteRecord()">
 </div>
 
 
@@ -145,7 +161,7 @@
 </body>
 <script>
   function deleteRecord() {
-      // 삭제를 수행하는 코드
+    // 삭제를 수행하는 코드
     window.location.href = "delete_ok.jsp?index=<%=vo.getIndex()%>";
 
   }

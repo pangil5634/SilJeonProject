@@ -51,6 +51,12 @@
         <li class="nav-item">
           <label class="nav-link active" onclick="alert('현재 페이지입니다.')">Add</label>
         </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="./timeTable.html">TimeTable</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="./etc/UserSurveyForm.html">Survey</a>
+        </li>
 
       </ul>
     </div>
@@ -61,7 +67,7 @@
         action="./edit_ok.jsp?index=<%=vo.getIndex()%>"
         name="form1"
         method="post"
-        onsubmit="return Checkform()">
+        onsubmit="return Checkform(2)">
   <div class="mb-3" id="my-mb-3-1">
     <label for="data1" class="form-label">과목 이름</label>
     <input
@@ -92,7 +98,7 @@
     <label for="data6" class="form-label">내용</label>
     <textarea class="form-control" id="data6" rows="3" name="content" id = "data6"><%=vo.getContent()%></textarea>
   </div>
-  <input class="btn btn-primary" type="submit" value="수정하기" id="button1">
+  <input class="btn btn-primary" type="submit" value="Edit" id="button1">
   <input class="btn btn-primary" type="reset" value="Reset" id="button2">
 </form>
 

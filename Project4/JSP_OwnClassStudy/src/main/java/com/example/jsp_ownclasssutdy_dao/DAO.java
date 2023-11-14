@@ -12,8 +12,8 @@ public class DAO{
     PreparedStatement stmt = null;
     ResultSet rs = null;
 
-    private final String DATA_INSERT = "insert into OwnClassStudy (subject, date, week, title, content, count) values (?, ?, ?, ?, ?, ?)";
-    private final String DATA_UPDATE = "update OwnClassStudy set subject=?, date=?, week=?, title=?, content=?, count=? where dataIndex=?";
+    private final String DATA_INSERT = "insert into OwnClassStudy (subject, date, week, title, content, count, photo) values (?, ?, ?, ?, ?, ?, ?)";
+    private final String DATA_UPDATE = "update OwnClassStudy set subject=?, date=?, week=?, title=?, content=?, count=?, photo=? where dataIndex=?";
     private final String DATA_DELETE = "delete from OwnClassStudy where dataIndex=?";
     private final String DATA_GET = "select * from OwnClassStudy where dataIndex=?";
     private final String DATA_LIST = "select * from OwnClassStudy order by week asc; ";
@@ -31,7 +31,7 @@ public class DAO{
             stmt.setString(4, vo.getTitle());
             stmt.setString(5, vo.getContent());
             stmt.setInt(6, vo.getCount());
-
+            stmt.setString(7, vo.getPhoto());
             stmt.executeUpdate();
             return 1;
         } catch (Exception e) {
@@ -63,11 +63,12 @@ public class DAO{
             stmt.setString(4, vo.getTitle());
             stmt.setString(5, vo.getContent());
             stmt.setInt(6, vo.getCount());
-            stmt.setInt(7, vo.getIndex());
+            stmt.setInt(8, vo.getIndex());
+            stmt.setString(7, vo.getPhoto());
 
-            System.out.println("수정된 정보 : " + vo.getIndex() + "-" + vo.getSubject() + "-" + vo.getWeek() + "-" + vo.getCount() + "-" + vo.getDate() + "-" + vo.getTitle() + "-" + vo.getContent());
+//            System.out.println("수정된 정보 : " + vo.getIndex() + "-" + vo.getSubject() + "-" + vo.getWeek() + "-" + vo.getCount() + "-" + vo.getDate() + "-" + vo.getTitle() + "-" + vo.getContent());
             stmt.executeUpdate();
-            System.out.println("Change Result : " + stmt.executeUpdate());
+//            System.out.println("Change Result : " + stmt.executeUpdate());
             return 1;
 
         }  catch (Exception e) {
@@ -84,7 +85,6 @@ public class DAO{
             conn = JDBCUtil.getConnection();
             stmt = conn.prepareStatement(DATA_GET);
             stmt.setInt(1, dataIndex);
-            System.out.println(stmt);
             rs = stmt.executeQuery();
 
             if(rs.next()){
@@ -95,9 +95,10 @@ public class DAO{
                 one.setDate((rs.getDate("date")));
                 one.setTitle((rs.getString("title")));
                 one.setContent((rs.getString("content")));
+                one.setPhoto((rs.getString("photo")));
             }
-            System.out.println(one.getIndex() + "-" + one.getSubject() + "-" + one.getWeek() + "-" + one.getCount() + "-" + one.getDate() + "-" + one.getTitle() + "-" + one
-                    .getContent());
+//            System.out.println(one.getIndex() + "-" + one.getSubject() + "-" + one.getWeek() + "-" + one.getCount() + "-" + one.getDate() + "-" + one.getTitle() + "-" + one
+//                    .getContent());
             rs.close();
         }  catch (Exception e) {
             e.printStackTrace();
@@ -121,6 +122,7 @@ public class DAO{
                 one.setDate((rs.getDate("date")));
                 one.setTitle((rs.getString("title")));
                 one.setContent((rs.getString("content")));
+                one.setPhoto((rs.getString("photo")));
                 list.add(one);
             }
             rs.close();
@@ -128,6 +130,23 @@ public class DAO{
             e.printStackTrace();
         }
         return list;
+    }
+
+    public String getPhotoFilename(int index){
+        String filename =null;
+        try{
+            conn = JDBCUtil.getConnection();
+            stmt = conn.prepareStatement(DATA_GET);
+            stmt.setInt(1, index);
+            rs = stmt.executeQuery();
+            if(rs.next()){
+                filename = rs.getString("photo");
+            }
+            rs.close();
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+        return filename;
     }
 
 

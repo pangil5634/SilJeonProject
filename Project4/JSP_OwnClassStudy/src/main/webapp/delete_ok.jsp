@@ -16,7 +16,7 @@
     vo.setIndex(Integer.parseInt(dataIndex));
     DAO dao = new DAO();
 
-    String filename = dao.getPhotoFilename(dataIndex);
+    String filename = dao.getPhotoFilename(Integer.parseInt(dataIndex));
     if(filename != null)
         FileUpload.deleteFile(request, filename);
     int deleteResult = dao.deleteData(vo);

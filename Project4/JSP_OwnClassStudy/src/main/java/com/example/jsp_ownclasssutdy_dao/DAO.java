@@ -12,8 +12,8 @@ public class DAO{
     PreparedStatement stmt = null;
     ResultSet rs = null;
 
-    private final String DATA_INSERT = "insert into OwnClassStudy (subject, date, week, title, content, count, photo) values (?, ?, ?, ?, ?, ?, ?)";
-    private final String DATA_UPDATE = "update OwnClassStudy set subject=?, date=?, week=?, title=?, content=?, count=?, photo=? where dataIndex=?";
+    private final String DATA_INSERT = "insert into OwnClassStudy (subject, date, week, title, content, count, photo, memo, writer, level) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    private final String DATA_UPDATE = "update OwnClassStudy set subject=?, date=?, week=?, title=?, content=?, count=?, photo=?, memo=?, writer=?, level=? where dataIndex=?";
     private final String DATA_DELETE = "delete from OwnClassStudy where dataIndex=?";
     private final String DATA_GET = "select * from OwnClassStudy where dataIndex=?";
     private final String DATA_LIST = "select * from OwnClassStudy order by week asc; ";
@@ -32,6 +32,9 @@ public class DAO{
             stmt.setString(5, vo.getContent());
             stmt.setInt(6, vo.getCount());
             stmt.setString(7, vo.getPhoto());
+            stmt.setString(8, vo.getMemo());
+            stmt.setString(9, vo.getWriter());
+            stmt.setInt(10, vo.getLevel());
             stmt.executeUpdate();
             return 1;
         } catch (Exception e) {
@@ -65,6 +68,9 @@ public class DAO{
             stmt.setInt(6, vo.getCount());
             stmt.setInt(8, vo.getIndex());
             stmt.setString(7, vo.getPhoto());
+            stmt.setString(8, vo.getMemo());
+            stmt.setString(9, vo.getWriter());
+            stmt.setInt(10, vo.getLevel());
 
 //            System.out.println("수정된 정보 : " + vo.getIndex() + "-" + vo.getSubject() + "-" + vo.getWeek() + "-" + vo.getCount() + "-" + vo.getDate() + "-" + vo.getTitle() + "-" + vo.getContent());
             stmt.executeUpdate();
@@ -96,6 +102,9 @@ public class DAO{
                 one.setTitle((rs.getString("title")));
                 one.setContent((rs.getString("content")));
                 one.setPhoto((rs.getString("photo")));
+                one.setMemo((rs.getString("memo")));
+                one.setWriter((rs.getString("writer")));
+                one.setLevel((rs.getInt("level")));
             }
 //            System.out.println(one.getIndex() + "-" + one.getSubject() + "-" + one.getWeek() + "-" + one.getCount() + "-" + one.getDate() + "-" + one.getTitle() + "-" + one
 //                    .getContent());
@@ -123,6 +132,9 @@ public class DAO{
                 one.setTitle((rs.getString("title")));
                 one.setContent((rs.getString("content")));
                 one.setPhoto((rs.getString("photo")));
+                one.setMemo((rs.getString("memo")));
+                one.setWriter((rs.getString("writer")));
+                one.setLevel((rs.getInt("level")));
                 list.add(one);
             }
             rs.close();

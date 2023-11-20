@@ -112,12 +112,34 @@
                 type="file"
                 class="form-control"
                 name="photo"
-                placeholder="Ex : 수업 정리"
+                placeholder="Ex : 사진"
                 id="data7">
+    </div>
+    <div class="mb-2" id="my-mb-3-1">
+        <label for="data5" class="form-label">중요도</label>
+        <input
+                type="number"
+                class="form-control"
+                name="level"
+                placeholder="Ex : 1~5"
+                id="data8">
+    </div>
+    <div class="mb-2" id="my-mb-3-2">
+        <label for="data5" class="form-label">작성자</label>
+        <input
+                type="text"
+                class="form-control"
+                name="writer"
+                placeholder="Ex : 홍길동"
+                id="data9">
     </div>
     <div class="mb-3">
         <label for="data6" class="form-label">내용</label>
-        <textarea class="form-control" id="data6" rows="3" name="content"></textarea>
+        <textarea class="form-control" id="data6" rows="3" name="content" placeholder="내용을 입력해주세요."></textarea>
+    </div>
+    <div class="mb-3">
+        <label for="data9" class="form-label">메모</label>
+        <textarea class="form-control" id="data10" rows="3" name="memo" placeholder="내용을 입력해주세요."></textarea>
     </div>
     <input class="btn btn-primary" type="submit" value="Submit" id="button1">
     <input class="btn btn-primary" type="reset" value="Reset" id="button2">

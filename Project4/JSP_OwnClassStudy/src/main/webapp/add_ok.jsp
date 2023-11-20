@@ -16,6 +16,7 @@
     request.setCharacterEncoding("UTF-8");
 
     FileUpload upload = new FileUpload();
+
     VO vo = new VO();
     vo = upload.uploadPhoto(request);
 

@@ -12,6 +12,35 @@ public class VO {
     private String title; // 제목
     private String content; // 내용
 
+    public String getWriter() {
+        return writer;
+    }
+
+    public void setWriter(String writer) {
+        this.writer = writer;
+    }
+
+    public String getMemo() {
+        return memo;
+    }
+
+    public void setMemo(String memo) {
+        this.memo = memo;
+    }
+
+    public int getLevel() {
+        return level;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
+    }
+
+    private String writer; // 작성자
+    private String memo; // 메모
+    private int level; // 레벨
+
+
     public String getPhoto() {
         return photo;
     }

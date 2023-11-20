@@ -66,11 +66,11 @@ public class DAO{
             stmt.setString(4, vo.getTitle());
             stmt.setString(5, vo.getContent());
             stmt.setInt(6, vo.getCount());
-            stmt.setInt(8, vo.getIndex());
             stmt.setString(7, vo.getPhoto());
             stmt.setString(8, vo.getMemo());
             stmt.setString(9, vo.getWriter());
             stmt.setInt(10, vo.getLevel());
+            stmt.setInt(11, vo.getIndex());
 
 //            System.out.println("수정된 정보 : " + vo.getIndex() + "-" + vo.getSubject() + "-" + vo.getWeek() + "-" + vo.getCount() + "-" + vo.getDate() + "-" + vo.getTitle() + "-" + vo.getContent());
             stmt.executeUpdate();

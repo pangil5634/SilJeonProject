@@ -105,6 +105,26 @@
             disabled="disabled">
 
   </div>
+  <div class="mb-3" id="my-mb-3-1">
+    <label for="data8" class="form-label">중요도</label>
+    <input
+            type="number"
+            class="form-control"
+            id="data8"
+            value="<%=vo.getLevel()%>"
+            name="level"
+            disabled="disabled">
+  </div>
+  <div class="mb-3" id="my-mb-3-2">
+    <label for="data9" class="form-label">작성자</label>
+    <input
+            type="text"
+            class="form-control"
+            id="data9"
+            value="<%=vo.getWriter()%>"
+            name="write"
+            disabled="disabled">
+  </div>
   <div class="mb-3">
     <label for="data5" class="form-label">제목</label>
     <input
@@ -123,6 +143,15 @@
             rows="3"
             name="content"
             disabled="disabled"><%=vo.getContent()%></textarea>
+  </div>
+  <div class="mb-3">
+    <label for="data10" class="form-label">메모</label>
+    <textarea
+            class="form-control"
+            id="data10"
+            rows="3"
+            name="memo"
+            disabled="disabled"><%=vo.getMemo()%></textarea>
   </div>
   <div class="mb-3">
     <label for="data6" class="form-label">사진</label>

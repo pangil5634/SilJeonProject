@@ -119,7 +119,7 @@
   </div>
   <div class="mb-2">
     <label for="data10" class="form-label">메모</label>
-    <textarea class="form-control" id="data10" rows="3" name="content" id = "data10"><%=vo.getMemo()%></textarea>
+    <textarea class="form-control" id="data10" rows="3" name="memo" id = "data10"><%=vo.getMemo()%></textarea>
   </div>
   <input class="btn btn-primary" type="submit" value="Edit" id="button1">
   <input class="btn btn-primary" type="reset" value="Reset" id="button2">

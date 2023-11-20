@@ -38,8 +38,11 @@ public class FileUpload {
             String content = multipartRequest.getParameter("content");
             String count = multipartRequest.getParameter("count");
             String photo = multipartRequest.getParameter("photo");
+            String writer = multipartRequest.getParameter("writer");
+            String level = multipartRequest.getParameter("level");
+            String memo = multipartRequest.getParameter("memo");
 
-            System.out.println(one.getIndex() + "-" + one.getSubject() + "-" + one.getWeek() + "-" + one.getCount() + "-" + one.getDate() + "-" + one.getTitle() + "-" + one.getContent());
+//            System.out.println(one.getIndex() + "-" + one.getSubject() + "-" + one.getWeek() + "-" + one.getCount() + "-" + one.getDate() + "-" + one.getTitle() + "-" + one.getContent());
 
 
             if (dataIndex != null && !dataIndex.equals(""))
@@ -60,6 +63,9 @@ public class FileUpload {
             one.setTitle(title);
             one.setContent(content);
             one.setPhoto(photo);
+            one.setLevel(Integer.parseInt(level));
+            one.setMemo(memo);
+            one.setWriter(writer);
 
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
             LocalDate myDate = LocalDate.parse(date, formatter);

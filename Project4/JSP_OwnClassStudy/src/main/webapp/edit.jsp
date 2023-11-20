@@ -105,9 +105,21 @@
             placeholder="Ex : 수업 정리"
             id="data7">
   </div>
+  <div class="mb-2" id = "my-mb-3-1">
+    <label for="data8" class="form-label">난이도</label>
+    <input type="number" class="form-control" name="level" placeholder="Ex : (1~5))" id = "data8" value = "<%=vo.getLevel()%>">
+  </div>
+  <div class="mb-2" id = "my-mb-3-2">
+    <label for="data9" class="form-label">작성자</label>
+    <input type="text" class="form-control" name="writer" placeholder="Ex : 홍길동" id = "data9" value = "<%=vo.getWriter()%>">
+  </div>
   <div class="mb-2">
     <label for="data6" class="form-label">내용</label>
     <textarea class="form-control" id="data6" rows="3" name="content" id = "data6"><%=vo.getContent()%></textarea>
+  </div>
+  <div class="mb-2">
+    <label for="data10" class="form-label">메모</label>
+    <textarea class="form-control" id="data10" rows="3" name="content" id = "data10"><%=vo.getMemo()%></textarea>
   </div>
   <input class="btn btn-primary" type="submit" value="Edit" id="button1">
   <input class="btn btn-primary" type="reset" value="Reset" id="button2">

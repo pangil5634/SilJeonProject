@@ -116,7 +116,7 @@
                 id="data7">
     </div>
     <div class="mb-2" id="my-mb-3-1">
-        <label for="data5" class="form-label">중요도</label>
+        <label for="data8" class="form-label">중요도</label>
         <input
                 type="number"
                 class="form-control"
@@ -125,7 +125,7 @@
                 id="data8">
     </div>
     <div class="mb-2" id="my-mb-3-2">
-        <label for="data5" class="form-label">작성자</label>
+        <label for="data9" class="form-label">작성자</label>
         <input
                 type="text"
                 class="form-control"
@@ -138,7 +138,7 @@
         <textarea class="form-control" id="data6" rows="3" name="content" placeholder="내용을 입력해주세요."></textarea>
     </div>
     <div class="mb-3">
-        <label for="data9" class="form-label">메모</label>
+        <label for="data10" class="form-label">메모</label>
         <textarea class="form-control" id="data10" rows="3" name="memo" placeholder="내용을 입력해주세요."></textarea>
     </div>
     <input class="btn btn-primary" type="submit" value="Submit" id="button1">

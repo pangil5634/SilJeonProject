@@ -74,7 +74,7 @@
 <body>
 <%--<img src = "img/banner.png" alt = "배너 사진" width = "90%"/>--%>
 <div id="myDiv">
-    <h1>2023 전세계 스포츠대회</h1>
+    <h1>아시안 게임 순위 집계표</h1>
     <button onclick="location.href='add'" id="button1">Add New Post</button>
 </div>
 <table id="list" width="90%">

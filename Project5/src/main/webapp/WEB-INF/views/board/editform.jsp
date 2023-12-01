@@ -44,15 +44,6 @@
             <td><input type="text" name="bronze" value="${u.bronze}" /></td>
         </tr>
         <tr>
-            <td>LOCATION:</td>
-            <td><input type="text" name="location" value="${u.location}" /></td>
-        </tr>
-
-        <tr>
-            <td>TOTAL:</td>
-            <td><input type="text" name="total" value="${u.total}" /></td>
-        </tr>
-        <tr>
             <td>Content:</td>
             <td><textarea cols="50" rows="5" name="content" >${u.content}</textarea></td>
         </tr>

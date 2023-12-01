@@ -5,16 +5,18 @@
   Time: 04:47
   To change this template use File | Settings | File Templates.
 --%>
-<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c"%>
-<c:set var = "path" value = "${pageContext.request.contextPath}"/>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <link href="<c:url value="css/home.css" />" rel="stylesheet">
+    <link href="<c:url value="css/font.css" />" rel="stylesheet">
     <title>게시판</title>
-    <link rel = "stylesheet" href = "${path}/resource/css/style.css"/>
 </head>
 <body>
-<h1>Hello world</h1>
-<p><a href = "board/list">게시판으로 이동</a></p>
+<div id = "section">
+    <h1>23년도 2학기 실전프로젝트 Project5</h1>
+    <a href="board/list" ><p>프로젝트 보러가기</p></a>
+</div>
 </body>
 </html>

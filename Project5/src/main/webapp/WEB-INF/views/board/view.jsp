@@ -1,11 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 <%@page import="com.example.BoardDAO, com.example.BoardVO" %>
+<c:set var="path" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <title>Edit Form</title>
+    <link href="${path}/resources/css/style.css" rel="stylesheet" >
 </head>
 <body>
 
@@ -42,10 +44,6 @@
         <tr>
             <td>BRONZE:</td>
             <td><input type="text" name="bronze" value="${u.bronze}" disabled/></td>
-        </tr>
-        <tr>
-            <td>LOCATION:</td>
-            <td><input type="text" name="location" value="${u.location}" disabled/></td>
         </tr>
 
         <tr>

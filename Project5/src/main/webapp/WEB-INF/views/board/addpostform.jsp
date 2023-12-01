@@ -28,10 +28,6 @@
             <td><input type="text" name="bronze" value="" /></td>
         </tr>
         <tr>
-            <td>LOCATION:</td>
-            <td><input type="text" name="location" value="" /></td>
-        </tr>
-        <tr>
             <td>Content:</td>
             <td><textarea cols="50" rows="5" name="content" ></textarea></td>
         </tr>

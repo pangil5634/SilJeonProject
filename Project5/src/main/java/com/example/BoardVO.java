@@ -63,7 +63,6 @@ public class BoardVO {
 
 
     public int getTotal() {
-        total = gold + silver + bronze;
         return total;
     }
 

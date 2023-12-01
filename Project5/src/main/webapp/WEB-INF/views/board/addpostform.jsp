@@ -1,42 +1,44 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <title>Insert title here</title>
+    <link href="<c:url value="/css/font.css" />" rel="stylesheet">
+    <link href="<c:url value="/css/input.css" />" rel="stylesheet">
 </head>
 <body>
+<div id = "section">
+    <h1>아시안 게임 순위 집계표 - 등록 화면</h1>
+    <form action="addok" method="post" id="inputform">
+        <div>
+            <span>COUNTRY_NAME</span>
+            <input type="text" name="country_name"/>
+        </div>
+        <div>
+            <span>GOLD</span>
+            <input type="number" name="gold"/>
+        </div>
+        <div>
+            <span>SILVER</span>
+            <input type="number" name="silver"/>
+        </div>
+        <div>
+            <span>BRONZE</span>
+            <input type="number" name="bronze"/>
+        </div>
+        <div>
+            <span>CONTENT</span>
+            <textarea cols="50" rows="5" name="content"></textarea>
+        </div>
+        <div id="button">
+            <input type="submit" value="ADD"/>
+            <input type="button" value="CANCLE" onclick="history.back()"/>
+        </div>
+    </form>
 
-<h1>Add New Post</h1>
-<form action="addok" method="post">
-    <table>
-        <tr>
-            <td>COUNTRY_NAME:</td>
-            <td><input type="text" name="country_name" value="" /></td>
-        </tr>
-        <tr>
-            <td>GOLD:</td>
-            <td><input type="text" name="gold" value="" /></td>
-        </tr>
-        <tr>
-            <td>SILVER:</td>
-            <td><input type="text" name="silver" value="" /></td>
-        </tr>
-        <tr>
-            <td>BRONZE:</td>
-            <td><input type="text" name="bronze" value="" /></td>
-        </tr>
-        <tr>
-            <td>Content:</td>
-            <td><textarea cols="50" rows="5" name="content" ></textarea></td>
-        </tr>
-        <tr>
-            <td><a href="list">View All Records</a></td>
-            <td align="right"><input type="submit" value="Add Post"/></td>
-        </tr>
-    </table>
-</form>
-
+</div>
 </body>
 </html>

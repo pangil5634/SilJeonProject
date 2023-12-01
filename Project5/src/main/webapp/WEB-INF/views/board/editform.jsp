@@ -1,58 +1,50 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 <%@page import="com.example.BoardDAO, com.example.BoardVO" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <title>Edit Form</title>
+    <link href="<c:url value="/css/font.css" />" rel="stylesheet">
+    <link href="<c:url value="/css/input.css" />" rel="stylesheet">
 </head>
 <body>
 
-<%
-    //	BoardDAO boardDAO = new BoardDAO();
-//	String id= ${u.seq};
-//	System.out.println("id : " + id);
-//	BoardVO u = null;
-//
-//	// id가 null이 아닌 경우에만 데이터를 가져오도록 수정
-//	if (id != null && !id.isEmpty()) {
-//		u = boardDAO.getBoard(Integer.parseInt(id));
-//	} else {
-//		System.out.println("null입니다.");
-//	}
-%>
+<div id="section">
+    <h1>아시안 게임 순위 집계표 - <span style="color : yellow">수정</span> 화면</h1>
+    <form action="editok" method="post" id="inputform">
+        <input type="hidden" name="seq" value="${u.seq}"/>
+        <div>
+            <span>COUNTRY_NAME</span>
+            <input type="text" name="country_name" value="${u.country_name}"/>
+        </div>
+        <div>
+            <span>GOLD</span>
+            <input type="number" name="gold" value="${u.gold}"/>
+        </div>
+        <div>
+            <span>SILVER</span>
+            <input type="number" name="silver" value="${u.silver}"/>
+        </div>
+        <div>
+            <span>BRONZE</span>
+            <input type="number" name="bronze" value="${u.bronze}"/>
+        </div>
+        <div>
+            <span>CONTENT</span>
+            <textarea cols="50" rows="5" name="content">${u.content}</textarea>
+        </div>
 
-<h1>Edit Form</h1>
-<form action="editok" method="post">
-    <input type="hidden" name="seq" value="${u.seq}"/>
-    <table>
-        <tr>
-            <td>COUNTRY_NAME:</td>
-            <td><input type="text" name="country_name" value="${u.country_name}" /></td>
-        </tr>
-        <tr>
-            <td>GOLD:</td>
-            <td><input type="text" name="gold" value="${u.gold}" /></td>
-        </tr>
-        <tr>
-            <td>SILVER:</td>
-            <td><input type="text" name="silver" value="${u.silver}" /></td>
-        </tr>
-        <tr>
-            <td>BRONZE:</td>
-            <td><input type="text" name="bronze" value="${u.bronze}" /></td>
-        </tr>
-        <tr>
-            <td>Content:</td>
-            <td><textarea cols="50" rows="5" name="content" >${u.content}</textarea></td>
-        </tr>
-        <tr>
-            <td colspan="2"><input type="submit" value="Edit Post"/>
-                <input type="button" value="Cancel" onclick="history.back()"/></td>
-        </tr>
-    </table>
-</form>
+        <div id="button">
+            <input type="submit" value="EDIT"/>
+            <input type="button" value="CANCLE" onclick="history.back()"/>
+        </div>
+
+
+    </form>
+</div>
 
 </body>
 </html>

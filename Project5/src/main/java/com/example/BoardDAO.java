@@ -1,4 +1,5 @@
 package com.example;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -14,16 +15,17 @@ public class BoardDAO {
     private JdbcTemplate jdbcTemplate;
 
     public int insertBoard(BoardVO vo) {
-        String sql = "insert into BOARD2 (country_name, gold, silver, bronze, content) values (" + "'" + vo.getCountry_name() + "', " + "'" + vo.getGold() + "', " +"'" + vo.getSilver() + "', " +"'" + vo.getBronze() + "', " +"'" + vo.getContent() + "')";
+        String sql = "insert into BOARD2 (country_name, gold, silver, bronze, content, total) values (" + "'" + vo.getCountry_name() + "', " + "'" + vo.getGold() + "', " + "'" + vo.getSilver() + "', " + "'" + vo.getBronze() + "', " + "'" + vo.getContent() + "', " + "'" + (vo.getGold() + vo.getSilver() + vo.getBronze()) + "')";
         return jdbcTemplate.update(sql);
     }
+
     public int deleteBoard(int seq) {
         String sql = "delete from BOARD2 where seq = " + seq;
         return jdbcTemplate.update(sql);
     }
 
     public int updateBoard(BoardVO vo) {
-        String sql = "update BOARD2 set country_name = '" + vo.getCountry_name() + "'," + "gold='" + vo.getGold() + "'," + "silver='" + vo.getSilver() + "', " + "bronze='" + vo.getBronze() + "', "+ "content='" + vo.getContent() + "' where seq=" + vo.getSeq();
+        String sql = "update BOARD2 set country_name = '" + vo.getCountry_name() + "'," + "gold='" + vo.getGold() + "'," + "silver='" + vo.getSilver() + "', " + "bronze='" + vo.getBronze() + "', " + "content='" + vo.getContent() +"', " + "total='" + (vo.getGold() + vo.getSilver() + vo.getBronze())  +  "' where seq=" + vo.getSeq();
         return jdbcTemplate.update(sql);
     }
 
@@ -32,8 +34,9 @@ public class BoardDAO {
         return jdbcTemplate.queryForObject(sql, new BoardRowMapper());
     }
 
+
     public List<BoardVO> getBoardList() {
-        String sql = "select * from BOARD2 order by seq asc ";
+        String sql = "select * from BOARD2 order by total desc ";
 //        String sql = "select * from BOARD";
         return jdbcTemplate.query(sql, new BoardRowMapper());
     }

@@ -5,65 +5,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link href="<c:url value="../css/font.css" />" rel="stylesheet">
+    <link href="<c:url value="../css/list.css" />" rel="stylesheet">
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-    <title>free board</title>
-    <style>
-        #list {
-            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-            border-collapse: collapse;
-            width: 100%;
-        }
-
-        #list td, #list th {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: center;
-        }
-
-        #list tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-
-        #list tr:hover {
-            background-color: #ddd;
-        }
-
-        #list th {
-            padding-top: 12px;
-            padding-bottom: 12px;
-            text-align: center;
-            background-color: #006bb3;
-            color: white;
-        }
-
-        a {
-            text-decoration: none;
-            color: black;
-        }
-
-        a:hover {
-            color: yellow;
-        }
-
-        #button1 {
-            width: 130px;
-            height: 40px;
-            border-radius: 15px;
-            border: none;
-            font-size: 1rem;
-        }
-
-        #button1:hover {
-            background-color: #006bb3;
-            color: white;
-        }
-
-        #myDiv{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-    </style>
+    <title>아시안 게임 순위 집계표</title>
     <script>
         function delete_ok(id) {
             var a = confirm("정말로 삭제하겠습니까?");
@@ -72,32 +17,32 @@
     </script>
 </head>
 <body>
-<%--<img src = "img/banner.png" alt = "배너 사진" width = "90%"/>--%>
+<img src = "../img/banner.png" alt = "배너 사진" width = "100%" id = "img1"/>
 <div id="myDiv">
     <h1>아시안 게임 순위 집계표</h1>
     <button onclick="location.href='add'" id="button1">Add New Post</button>
 </div>
-<table id="list" width="90%">
+<table id="list" width="100%">
     <tr>
         <th>Id</th>
         <th>Country_name</th>
-        <th>GOLD</th>
-        <th>SILVER</th>
-        <th>BRONZE</th>
+        <th>🥇GOLD🥇</th>
+        <th>🥈SILVER🥈</th>
+        <th>🥉BRONZE🥉</th>
         <th>TOTAL</th>
         <th>DETAIL</th>
         <th>Edit</th>
         <th>Delete</th>
     </tr>
-    <c:forEach items="${list}" var="u">
+    <c:forEach items="${list}" var="u" varStatus="status">
         <tr>
-            <td>${u.getSeq()}</td>
+            <td>${status.index + 1}</td>
             <td>${u.getCountry_name()}</td>
-            <td>${u.getGold()}</td>
-            <td>${u.getSilver()}</td>
-            <td>${u.getBronze()}</td>
-            <td>${u.getTotal()}</td>
-            <td><a href="view/${u.seq}">⭐️</a></td>
+            <td>${u.getGold()}개</td>
+            <td>${u.getSilver()}개</td>
+            <td>${u.getBronze()}개</td>
+            <td>${u.getTotal()}개</td>
+            <td><a href="view/${u.seq}">보러가기️</a></td>
             <td><a href="editform/${u.seq}">Edit</a></td>
             <td><a href="javascript:delete_ok('${u.seq}')">Delete</a></td>
         </tr>

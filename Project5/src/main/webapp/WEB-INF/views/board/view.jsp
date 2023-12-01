@@ -23,32 +23,45 @@
 //	}
 %>
 
-<h1>Edit Form</h1>
+<h1>VIEW PAGE</h1>
 <form>
     <input type="hidden" name="seq" value="${u.seq}"/>
     <table>
         <tr>
-            <td>Title:</td>
-            <td><input type="text" name="title" value="${u.title}" disabled/></td>
+            <td>COUNTRY_NAME:</td>
+            <td><input type="text" name="country_name" value="${u.country_name}" disabled/></td>
         </tr>
         <tr>
-            <td>Writer:</td>
-            <td><input type="text" name="writer" value="${u.writer}" disabled/></td>
+            <td>GOLD:</td>
+            <td><input type="text" name="gold" value="${u.gold}" disabled/></td>
+        </tr>
+        <tr>
+            <td>SILVER:</td>
+            <td><input type="text" name="silver" value="${u.silver}" disabled/></td>
+        </tr>
+        <tr>
+            <td>BRONZE:</td>
+            <td><input type="text" name="bronze" value="${u.bronze}" disabled/></td>
+        </tr>
+        <tr>
+            <td>LOCATION:</td>
+            <td><input type="text" name="location" value="${u.location}" disabled/></td>
+        </tr>
+
+        <tr>
+            <td>TOTAL:</td>
+            <td><input type="text" name="total" value="${u.total}" disabled/></td>
         </tr>
         <tr>
             <td>Content:</td>
             <td><textarea cols="50" rows="5" name="content" disabled>${u.content}</textarea></td>
         </tr>
         <tr>
-            <td>Count:</td>
-            <td><input type="text" name="cnt" value="${u.cnt}" disabled/></td>
+            <td>TOTAL:</td>
+            <td><input type="date" name="regdate" value="${u.regdate}" disabled/></td>
         </tr>
         <tr>
-            <td>regdate:</td>
-            <td><input type="date" name="cnt" value="${u.regdate}" disabled/></td>
-        </tr>
-        <tr>
-            <td colspan="2"><input type="button" value="수정하기" onclick=""/>
+            <td colspan="2"><input type="submit" value="수정하기"/>
                 <input type="button" value="홈으로" onclick="history.back()"/></td>
         </tr>
     </table>

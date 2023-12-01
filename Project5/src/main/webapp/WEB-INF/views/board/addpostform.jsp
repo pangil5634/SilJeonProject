@@ -12,20 +12,28 @@
 <form action="addok" method="post">
     <table>
         <tr>
-            <td>Title:</td>
-            <td><input type="text" name="title"/></td>
+            <td>COUNTRY_NAME:</td>
+            <td><input type="text" name="country_name" value="" /></td>
         </tr>
         <tr>
-            <td>Writer:</td>
-            <td><input type="text" name="writer"/></td>
+            <td>GOLD:</td>
+            <td><input type="text" name="gold" value="" /></td>
+        </tr>
+        <tr>
+            <td>SILVER:</td>
+            <td><input type="text" name="silver" value="" /></td>
+        </tr>
+        <tr>
+            <td>BRONZE:</td>
+            <td><input type="text" name="bronze" value="" /></td>
+        </tr>
+        <tr>
+            <td>LOCATION:</td>
+            <td><input type="text" name="location" value="" /></td>
         </tr>
         <tr>
             <td>Content:</td>
-            <td><textarea cols="50" rows="5" name="content"></textarea></td>
-        </tr>
-        <tr>
-            <td>Count:</td>
-            <td><input type="number" name="cnt"/></td>
+            <td><textarea cols="50" rows="5" name="content" ></textarea></td>
         </tr>
         <tr>
             <td><a href="list">View All Records</a></td>

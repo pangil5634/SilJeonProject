@@ -72,29 +72,31 @@
     </script>
 </head>
 <body>
+<%--<img src = "img/banner.png" alt = "배너 사진" width = "90%"/>--%>
 <div id="myDiv">
-    <h1>자유게시판</h1>
+    <h1>2023 전세계 스포츠대회</h1>
     <button onclick="location.href='add'" id="button1">Add New Post</button>
 </div>
 <table id="list" width="90%">
     <tr>
         <th>Id</th>
-        <th>Title</th>
-        <th>Writer</th>
-        <th>Content</th>
-        <th>Cnt</th>
-        <th>자세히</th>
+        <th>Country_name</th>
+        <th>GOLD</th>
+        <th>SILVER</th>
+        <th>BRONZE</th>
+        <th>TOTAL</th>
+        <th>DETAIL</th>
         <th>Edit</th>
         <th>Delete</th>
     </tr>
-    <p>${list.size()}</p>
     <c:forEach items="${list}" var="u">
         <tr>
             <td>${u.getSeq()}</td>
-            <td>${u.getTitle()}</td>
-            <td>${u.getWriter()}</td>
-            <td>${u.getContent()}</td>
-            <td>${u.getCnt()}</td>
+            <td>${u.getCountry_name()}</td>
+            <td>${u.getGold()}</td>
+            <td>${u.getSilver()}</td>
+            <td>${u.getBronze()}</td>
+            <td>${u.getTotal()}</td>
             <td><a href="view/${u.seq}">⭐️</a></td>
             <td><a href="editform/${u.seq}">Edit</a></td>
             <td><a href="javascript:delete_ok('${u.seq}')">Delete</a></td>

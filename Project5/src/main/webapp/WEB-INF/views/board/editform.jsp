@@ -28,20 +28,33 @@
     <input type="hidden" name="seq" value="${u.seq}"/>
     <table>
         <tr>
-            <td>Title:</td>
-            <td><input type="text" name="title" value="${u.title}"/></td>
+            <td>COUNTRY_NAME:</td>
+            <td><input type="text" name="country_name" value="${u.country_name}" /></td>
         </tr>
         <tr>
-            <td>Writer:</td>
-            <td><input type="text" name="writer" value="${u.writer}"/></td>
+            <td>GOLD:</td>
+            <td><input type="text" name="gold" value="${u.gold}" /></td>
+        </tr>
+        <tr>
+            <td>SILVER:</td>
+            <td><input type="text" name="silver" value="${u.silver}" /></td>
+        </tr>
+        <tr>
+            <td>BRONZE:</td>
+            <td><input type="text" name="bronze" value="${u.bronze}" /></td>
+        </tr>
+        <tr>
+            <td>LOCATION:</td>
+            <td><input type="text" name="location" value="${u.location}" /></td>
+        </tr>
+
+        <tr>
+            <td>TOTAL:</td>
+            <td><input type="text" name="total" value="${u.total}" /></td>
         </tr>
         <tr>
             <td>Content:</td>
-            <td><textarea cols="50" rows="5" name="content">${u.content}</textarea></td>
-        </tr>
-        <tr>
-            <td>Count:</td>
-            <td><input type="text" name="cnt" value="${u.cnt}"/></td>
+            <td><textarea cols="50" rows="5" name="content" >${u.content}</textarea></td>
         </tr>
         <tr>
             <td colspan="2"><input type="submit" value="Edit Post"/>

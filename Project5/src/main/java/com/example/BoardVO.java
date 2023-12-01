@@ -3,12 +3,15 @@ package com.example;
 import java.util.Date;
 
 public class BoardVO {
-    private int seq;
-    private String title;
-    private String writer;
-    private String content;
-    private Date regdate;
-    private int cnt;
+
+    private int seq; // index
+    private String country_name; // 나라 이름
+    private int gold; // 금메달 개수
+    private int silver; // 은메달 개수
+    private int bronze; // 동메달 개수
+    private String content; // 나라 정보
+    private int total; // 메달 개수
+    private Date regdate; // 작성 날짜
 
     public int getSeq() {
         return seq;
@@ -17,21 +20,37 @@ public class BoardVO {
     public void setSeq(int seq) {
         this.seq = seq;
     }
-    
-    public String getTitle() {
-        return title;
+
+    public String getCountry_name() {
+        return country_name;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setCountry_name(String country_name) {
+        this.country_name = country_name;
     }
 
-    public String getWriter() {
-        return writer;
+    public int getGold() {
+        return gold;
     }
 
-    public void setWriter(String writer) {
-        this.writer = writer;
+    public void setGold(int gold) {
+        this.gold = gold;
+    }
+
+    public int getSilver() {
+        return silver;
+    }
+
+    public void setSilver(int silver) {
+        this.silver = silver;
+    }
+
+    public int getBronze() {
+        return bronze;
+    }
+
+    public void setBronze(int bronze) {
+        this.bronze = bronze;
     }
 
     public String getContent() {
@@ -42,19 +61,21 @@ public class BoardVO {
         this.content = content;
     }
 
+
+    public int getTotal() {
+        total = gold + silver + bronze;
+        return total;
+    }
+
+    public void setTotal(int total) {
+        this.total = total;
+    }
+
     public Date getRegdate() {
         return regdate;
     }
 
     public void setRegdate(Date regdate) {
         this.regdate = regdate;
-    }
-
-    public int getCnt() {
-        return cnt;
-    }
-
-    public void setCnt(int cnt) {
-        this.cnt = cnt;
     }
 }
